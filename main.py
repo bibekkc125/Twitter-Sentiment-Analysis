@@ -32,7 +32,7 @@ loaded_model =joblib.load("trainedmodel.sav")
 predicted = loaded_model.predict(x_test)
 
 print("\nMultinomialNB Accuracy:",metrics.accuracy_score(y_test, predicted))
-abc = cross_val_score(loaded_model,x_train,y_train,cv=10)
+abc = cross_val_score(loaded_model,tf_train,df['target'],cv=10)
 print("The accuracy by crossvalidation is: %0.10f"% abc.mean())
 print("\n")
 print(classification_report(y_test,predicted))
