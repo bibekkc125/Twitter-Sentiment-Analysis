@@ -9,7 +9,7 @@ from main import tt
 
 loaded_model =joblib.load("trainedmodel.sav")
 
-input_str = input('\nEnter a string: ')
+
 
 
 def predict_tweet(tt,input_str):
@@ -35,8 +35,11 @@ def predict_tweet(tt,input_str):
     testing = tt.transform(m)
     return loaded_model.predict(testing)
 
-output = predict_tweet(tt,input_str)
-if output[0] == 0:
-    print ("Sentiment : Negative")
-elif output[0] == 4:
-    print ("Sentiment :Positive")
+
+for i in range(5):
+    input_str = input('\nEnter a string: ')
+    output = predict_tweet(tt,input_str)
+    if output[0] == 0:
+        print ("Sentiment : Negative")
+    elif output[0] == 4:
+        print ("Sentiment :Positive")

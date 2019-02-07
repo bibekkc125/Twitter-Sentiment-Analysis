@@ -31,11 +31,11 @@ nb =MultinomialNB().fit(x_train,y_train)
 loaded_model =joblib.load("trainedmodel.sav")
 predicted = loaded_model.predict(x_test)
 
-print("\nMultinomialNB Accuracy:",metrics.accuracy_score(y_test, predicted))
-abc = cross_val_score(loaded_model,tf_train,df['target'],cv=10)
-print("The accuracy by crossvalidation is: %0.10f"% abc.mean())
-print("\n")
-print(classification_report(y_test,predicted))
+# print("\nMultinomialNB Accuracy:",metrics.accuracy_score(y_test, predicted))
+# abc = cross_val_score(loaded_model,tf_train,df['target'],cv=10)
+# print("The accuracy by crossvalidation is: %0.10f"% abc.mean())
+# print("\n")
+# print(classification_report(y_test,predicted))
 
 # a = np.array(["That movie was awesome."])
 # print(a)
@@ -46,7 +46,7 @@ print(classification_report(y_test,predicted))
 # else:
 #     print ("Sentiment :Positive")
 
-print("\n")
-print(confusion_matrix(y_test,predicted))
+# print("\n")
+# print(confusion_matrix(y_test,predicted))
 
 
